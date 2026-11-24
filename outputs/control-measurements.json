@@ -1,0 +1,279 @@
+{
+  "controls": [
+    {
+      "attempts": 10,
+      "citation": "src/xrpld/app/misc/detail/Manifest.cpp:411-425",
+      "control": "C00",
+      "effectiveness_pct": 100.0,
+      "name": "Manifest sequence monotonicity (stale rejection)",
+      "notes": [
+        "superseded manifest replay rejected stale"
+      ],
+      "scenarios": [
+        "S6"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 10,
+      "citation": "src/xrpld/app/misc/detail/Manifest.cpp:198-214",
+      "control": "C01",
+      "effectiveness_pct": 100.0,
+      "name": "Master-signature verification on manifests",
+      "notes": [
+        "forged master signature rejected"
+      ],
+      "scenarios": [
+        "S6"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 10,
+      "citation": "src/xrpld/app/misc/detail/Manifest.cpp:198-214",
+      "control": "C02",
+      "effectiveness_pct": 100.0,
+      "name": "Ephemeral-signature verification on manifests",
+      "notes": [
+        "forged ephemeral signature rejected"
+      ],
+      "scenarios": [
+        "S6"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 10,
+      "citation": "src/xrpld/app/misc/detail/Manifest.cpp:226-241,438-444",
+      "control": "C03",
+      "effectiveness_pct": 100.0,
+      "name": "Revocation is terminal (sequence 0xFFFFFFFF)",
+      "notes": [
+        "no manifest accepted after revocation; revocation is terminal"
+      ],
+      "scenarios": [
+        "S3"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 30,
+      "citation": "src/xrpld/app/misc/detail/Manifest.cpp:447-497",
+      "control": "C04",
+      "effectiveness_pct": 100.0,
+      "name": "Key-reuse bans (master/ephemeral cross-use)",
+      "notes": [
+        "key-reuse manifest rejected (ephemeral_reuse)",
+        "key-reuse manifest rejected (master_is_ephemeral)",
+        "key-reuse manifest rejected (signing_is_master)"
+      ],
+      "scenarios": [
+        "S7"
+      ],
+      "status": "MEASURED",
+      "stopped": 30
+    },
+    {
+      "attempts": 3,
+      "citation": "src/xrpld/app/misc/detail/ValidatorKeys.cpp:35-75",
+      "control": "C05",
+      "effectiveness_pct": 100.0,
+      "name": "Validator token / seed config rules",
+      "notes": [
+        "config rules enforced as coded"
+      ],
+      "scenarios": [
+        "S7"
+      ],
+      "status": "MEASURED",
+      "stopped": 3
+    },
+    {
+      "attempts": 1005,
+      "citation": "src/xrpld/app/misc/Manifest.h:283",
+      "control": "C06",
+      "effectiveness_pct": 100.0,
+      "name": "Untrusted manifest cache bound (1000 entries)",
+      "notes": [
+        "cache held at the 1000-entry bound; oldest evicted"
+      ],
+      "scenarios": [
+        "S7"
+      ],
+      "status": "MEASURED",
+      "stopped": 1005
+    },
+    {
+      "attempts": 100,
+      "citation": "src/xrpld/consensus/Validations.h:92-135",
+      "control": "C07",
+      "effectiveness_pct": 100.0,
+      "name": "SeqEnforcer: monotonic validation sequence per node",
+      "notes": [
+        "second validation for a sequence never counted"
+      ],
+      "scenarios": [
+        "S4"
+      ],
+      "status": "MEASURED",
+      "stopped": 100
+    },
+    {
+      "attempts": 100,
+      "citation": "src/xrpld/consensus/Validations.h:623-700",
+      "control": "C08",
+      "effectiveness_pct": 100.0,
+      "name": "Conflicting-validation detection (double-sign)",
+      "notes": [
+        "same-sequence divergent-ledger validations flagged"
+      ],
+      "scenarios": [
+        "S4"
+      ],
+      "status": "MEASURED",
+      "stopped": 100
+    },
+    {
+      "attempts": 10,
+      "citation": "src/xrpld/consensus/Validations.h:46-89,149-166",
+      "control": "C09",
+      "effectiveness_pct": 100.0,
+      "name": "Validation currency windows",
+      "notes": [
+        "360 s old validation outside the currency window"
+      ],
+      "scenarios": [
+        "S6"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 300,
+      "citation": "src/xrpld/app/misc/detail/ValidatorList.cpp:220-231",
+      "control": "C10",
+      "effectiveness_pct": 100.0,
+      "name": "UNL trust gating (node identity must be listed)",
+      "notes": [
+        "validations from an unlisted identity never counted toward consensus"
+      ],
+      "scenarios": [
+        "S8"
+      ],
+      "status": "MEASURED",
+      "stopped": 300
+    },
+    {
+      "attempts": 10,
+      "citation": "include/xrpl/protocol/PublicKey.h:65",
+      "control": "C11",
+      "effectiveness_pct": 100.0,
+      "name": "Fixed 33-byte public-key buffer",
+      "notes": [
+        "1952-byte ML-DSA-65 key fails the 33-byte publicKeyType check"
+      ],
+      "scenarios": [
+        "S9"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 10,
+      "citation": "include/xrpl/protocol/KeyType.h:28-31; src/libxrpl/protocol/PublicKey.cpp:223-236",
+      "control": "C12",
+      "effectiveness_pct": 100.0,
+      "name": "Key-type allowlist (secp256k1, ed25519 only)",
+      "notes": [
+        "mldsa65 is not a member of the pinned KeyType enum"
+      ],
+      "scenarios": [
+        "S9"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 10,
+      "citation": "src/xrpld/app/misc/detail/Manifest.cpp:91-93",
+      "control": "C13",
+      "effectiveness_pct": 100.0,
+      "name": "Manifest version gate (only version 0)",
+      "notes": [
+        "version 1 manifest rejected at deserialize"
+      ],
+      "scenarios": [
+        "S7"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 10,
+      "citation": "src/xrpld/app/misc/detail/Manifest.cpp:103-111",
+      "control": "C14",
+      "effectiveness_pct": 100.0,
+      "name": "Manifest domain format check",
+      "notes": [
+        "malformed-domain manifest rejected at deserialize"
+      ],
+      "scenarios": [
+        "S7"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 10,
+      "citation": "src/libxrpl/protocol/STValidation.cpp:123-150",
+      "control": "C15",
+      "effectiveness_pct": 100.0,
+      "name": "Validation signature verification (STValidation)",
+      "notes": [
+        "tampered validation signature rejected"
+      ],
+      "scenarios": [
+        "S6"
+      ],
+      "status": "MEASURED",
+      "stopped": 10
+    },
+    {
+      "attempts": 1240,
+      "citation": "src/xrpld/app/misc/Manifest.h:357; src/xrpld/app/misc/detail/Manifest.cpp:567-590",
+      "control": "C16",
+      "effectiveness_pct": 100.0,
+      "name": "Manifest key-currency (superseded key never counts)",
+      "notes": [
+        "superseded-key validations never counted"
+      ],
+      "scenarios": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "status": "MEASURED",
+      "stopped": 1240
+    },
+    {
+      "attempts": 300,
+      "citation": "src/xrpld/app/misc/detail/ValidatorKeys.cpp:77-91",
+      "control": "C17",
+      "effectiveness_pct": 100.0,
+      "name": "Seed mode has no rotation mechanism (negative control)",
+      "notes": [
+        "seed-mode rotation produced a new unlisted identity; every validation until the UNL update was untrusted"
+      ],
+      "scenarios": [
+        "S8"
+      ],
+      "status": "MEASURED",
+      "stopped": 300
+    }
+  ],
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55"
+}

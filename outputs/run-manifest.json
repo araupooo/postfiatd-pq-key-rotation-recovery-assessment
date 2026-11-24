@@ -1,0 +1,52 @@
+{
+  "harness_sha256": "f78a84516609e3a6215b02cfb404cedceaf5ca4a73be5b7cec3283485d45bcb4",
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenarios": [
+    {
+      "path": "scenarios/S0-baseline.json",
+      "sha256": "856a3adbe59f76a280c546391a37c2a20ee1e74fb56f538146693ba3558bfb1a"
+    },
+    {
+      "path": "scenarios/S1-scheduled-rotation.json",
+      "sha256": "8f3044c5b9530f277ff848602f7c54057f782c19d6cee6de24d11995d8943abd"
+    },
+    {
+      "path": "scenarios/S10-partition.json",
+      "sha256": "9f542713228b3d3612acf48df7d072628764e8087e7d6953241ade8e89d87250"
+    },
+    {
+      "path": "scenarios/S2-emergency-rotation.json",
+      "sha256": "5b506e2d3dd1b4a3852690d44366b80b2d7cabb49636c16ee7e9971e2a33e01f"
+    },
+    {
+      "path": "scenarios/S3-master-revocation.json",
+      "sha256": "43b35648a8aa6782488bee84dcfd28d1b2ff775eaf453a69f5bf5e4f8850b5b4"
+    },
+    {
+      "path": "scenarios/S4-duplicate-token.json",
+      "sha256": "e88a5401dfa89ab98e56224db9e50913e4d8940ceec8f591cc6077afc3159879"
+    },
+    {
+      "path": "scenarios/S5-rollback.json",
+      "sha256": "be99e9c5ce8d4cfe01071177a8cafef5d0adbae838b31d0824a650fe31cd6258"
+    },
+    {
+      "path": "scenarios/S6-replay-forgery.json",
+      "sha256": "43f31d3778b0cd1d466cdaedb8b7c1238af4a446089c4c226989939ec8166687"
+    },
+    {
+      "path": "scenarios/S7-key-reuse.json",
+      "sha256": "4d3b66e88bbb0365ba24be78125042cc30a0e26a6cc53d928c524103ac770e7d"
+    },
+    {
+      "path": "scenarios/S8-seed-mode.json",
+      "sha256": "95c34f0302f45826c99cf9413e4546908d4f3f9fe7203d037b3b6c2af6d51b50"
+    },
+    {
+      "path": "scenarios/S9-pq-sizes.json",
+      "sha256": "3de70585b10de2b9fb104efb034ca1d0553f9901d2afd43ab36d29870b5e5f3b"
+    }
+  ],
+  "seed": 20261125,
+  "simulator_sha256": "bd881fa5f6d509356df6ad4f914b52cbdd87aee05c9e960c0c6fb96b49117bf5"
+}

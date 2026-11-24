@@ -1,0 +1,77 @@
+fresh-clone reproduction transcript
+reproduction: fresh copy of the pack (label: fresh-copy)
+command: bash scripts/verify_digests.sh (equivalent: sha256sum -c SHA256SUMS, excluding the transcript itself — see note below)
+manifest.json sha256: 0d67443c9f50fa9ac5bae8d84d57d4a76faae9459becd5599f0c466138c75e9b
+files verified: 68
+note: outputs/fresh-clone-reproduction.log is excluded from the verified set recorded here because it records this run; it is covered by SHA256SUMS and by the final verify_digests.sh run in run_all.sh.
+--- verify_digests.sh output ---
+./.gitignore: OK
+./README.md: OK
+./docs/control-inventory.md: OK
+./docs/decision-memo.md: OK
+./docs/environment.md: OK
+./docs/findings-report.md: OK
+./docs/methodology.md: OK
+./docs/remediation-report.md: OK
+./docs/source-inventory.md: OK
+./manifest.json: OK
+./outputs/S0-events.csv: OK
+./outputs/S0.json: OK
+./outputs/S0.log: OK
+./outputs/S1-events.csv: OK
+./outputs/S1.json: OK
+./outputs/S1.log: OK
+./outputs/S10-events.csv: OK
+./outputs/S10.json: OK
+./outputs/S10.log: OK
+./outputs/S2-events.csv: OK
+./outputs/S2.json: OK
+./outputs/S2.log: OK
+./outputs/S3-events.csv: OK
+./outputs/S3.json: OK
+./outputs/S3.log: OK
+./outputs/S4-events.csv: OK
+./outputs/S4.json: OK
+./outputs/S4.log: OK
+./outputs/S5-events.csv: OK
+./outputs/S5.json: OK
+./outputs/S5.log: OK
+./outputs/S6-events.csv: OK
+./outputs/S6.json: OK
+./outputs/S6.log: OK
+./outputs/S7-events.csv: OK
+./outputs/S7.json: OK
+./outputs/S7.log: OK
+./outputs/S8-events.csv: OK
+./outputs/S8.json: OK
+./outputs/S8.log: OK
+./outputs/S9-events.csv: OK
+./outputs/S9.json: OK
+./outputs/S9.log: OK
+./outputs/control-measurements.json: OK
+./outputs/control-measurements.md: OK
+./outputs/matrix.json: OK
+./outputs/matrix.md: OK
+./outputs/run-manifest.json: OK
+./scenarios/S0-baseline.json: OK
+./scenarios/S1-scheduled-rotation.json: OK
+./scenarios/S10-partition.json: OK
+./scenarios/S2-emergency-rotation.json: OK
+./scenarios/S3-master-revocation.json: OK
+./scenarios/S4-duplicate-token.json: OK
+./scenarios/S5-rollback.json: OK
+./scenarios/S6-replay-forgery.json: OK
+./scenarios/S7-key-reuse.json: OK
+./scenarios/S8-seed-mode.json: OK
+./scenarios/S9-pq-sizes.json: OK
+./scripts/build_matrix.py: OK
+./scripts/load_harness.py: OK
+./scripts/make_manifest.py: OK
+./scripts/make_reproduction_transcript.py: OK
+./scripts/make_sha256sums.sh: OK
+./scripts/measure_controls.py: OK
+./scripts/run_all.sh: OK
+./scripts/simulator.py: OK
+./scripts/verify_digests.sh: OK
+--- end of output ---
+exit status: 0

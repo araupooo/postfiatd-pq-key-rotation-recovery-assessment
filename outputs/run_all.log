@@ -1,0 +1,91 @@
+run started at 2026-11-24T22:38:12Z
+pinned commit: 0085a1ff885d6a446369cf73a4430f75af22be55
+S0: 120 ledgers, 120 events, totals {"accepted": 1200}
+S1: 120 ledgers, 127 events, totals {"accepted": 1200, "superseded_key": 50}
+S10: 120 ledgers, 123 events, totals {"accepted": 1150}
+S2: 120 ledgers, 183 events, totals {"accepted": 1190, "missed": 1, "superseded_key": 590}
+S3: 120 ledgers, 184 events, totals {"accepted": 600, "missed": 60, "superseded_key": 600}
+S4: 120 ledgers, 130 events, totals {"accepted": 1200, "conflicting": 100}
+S5: 120 ledgers, 124 events, totals {"accepted": 1100, "missed": 10}
+S6: 120 ledgers, 127 events, totals {"accepted": 1200}
+S7: 60 ledgers, 69 events, totals {"accepted": 600}
+S8: 120 ledgers, 122 events, totals {"accepted": 900, "untrusted": 300}
+S9: 5 ledgers, 6 events, totals {"accepted": 50}
+run-manifest: 11 scenarios
+matrix: 11 scenarios (0 CRITICAL, 2 HIGH, 2 MEDIUM, 5 LOW, 2 INFO)
+controls: 18 measured, 0 unmeasured
+manifest: 67 files
+SHA256SUMS: 69 entries
+transcript: 68 files verified, exit 0
+DETERMINISM OK: all scenario outputs byte-identical across runs
+SHA256SUMS: 69 entries
+./.gitignore: OK
+./README.md: OK
+./docs/control-inventory.md: OK
+./docs/decision-memo.md: OK
+./docs/environment.md: OK
+./docs/findings-report.md: OK
+./docs/methodology.md: OK
+./docs/remediation-report.md: OK
+./docs/source-inventory.md: OK
+./manifest.json: OK
+./outputs/S0-events.csv: OK
+./outputs/S0.json: OK
+./outputs/S0.log: OK
+./outputs/S1-events.csv: OK
+./outputs/S1.json: OK
+./outputs/S1.log: OK
+./outputs/S10-events.csv: OK
+./outputs/S10.json: OK
+./outputs/S10.log: OK
+./outputs/S2-events.csv: OK
+./outputs/S2.json: OK
+./outputs/S2.log: OK
+./outputs/S3-events.csv: OK
+./outputs/S3.json: OK
+./outputs/S3.log: OK
+./outputs/S4-events.csv: OK
+./outputs/S4.json: OK
+./outputs/S4.log: OK
+./outputs/S5-events.csv: OK
+./outputs/S5.json: OK
+./outputs/S5.log: OK
+./outputs/S6-events.csv: OK
+./outputs/S6.json: OK
+./outputs/S6.log: OK
+./outputs/S7-events.csv: OK
+./outputs/S7.json: OK
+./outputs/S7.log: OK
+./outputs/S8-events.csv: OK
+./outputs/S8.json: OK
+./outputs/S8.log: OK
+./outputs/S9-events.csv: OK
+./outputs/S9.json: OK
+./outputs/S9.log: OK
+./outputs/control-measurements.json: OK
+./outputs/control-measurements.md: OK
+./outputs/fresh-clone-reproduction.log: OK
+./outputs/matrix.json: OK
+./outputs/matrix.md: OK
+./outputs/run-manifest.json: OK
+./scenarios/S0-baseline.json: OK
+./scenarios/S1-scheduled-rotation.json: OK
+./scenarios/S10-partition.json: OK
+./scenarios/S2-emergency-rotation.json: OK
+./scenarios/S3-master-revocation.json: OK
+./scenarios/S4-duplicate-token.json: OK
+./scenarios/S5-rollback.json: OK
+./scenarios/S6-replay-forgery.json: OK
+./scenarios/S7-key-reuse.json: OK
+./scenarios/S8-seed-mode.json: OK
+./scenarios/S9-pq-sizes.json: OK
+./scripts/build_matrix.py: OK
+./scripts/load_harness.py: OK
+./scripts/make_manifest.py: OK
+./scripts/make_reproduction_transcript.py: OK
+./scripts/make_sha256sums.sh: OK
+./scripts/measure_controls.py: OK
+./scripts/run_all.sh: OK
+./scripts/simulator.py: OK
+./scripts/verify_digests.sh: OK
+run_all.sh: OK

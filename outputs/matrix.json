@@ -1,0 +1,103 @@
+{
+  "rows": [
+    {
+      "headline": "during the 10-ledger partition, validations accepted by 5/10 peers (quorum 8 not met); acceptance resumed 10/10 after the heal",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S10",
+      "severity": "HIGH",
+      "severity_reason": "The rotation succeeds but the validator contributes nothing during the partition: half the network never sees the new manifest, so the new key's validations are untrusted there and the 80% quorum is not met for ten ledgers. Bounded and self-healing, but a real availability loss.",
+      "title": "Rotation during a network partition"
+    },
+    {
+      "headline": "seed-mode rotation: new identity trusted 0/30 ledgers before the UNL update, 90/120 ledgers trusted overall",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S8",
+      "severity": "HIGH",
+      "severity_reason": "Rotation without a manifest is an identity change, not a rotation: the new key is a new unlisted validator, and every validation it issues is untrusted until the operator updates the UNL on every peer \u2014 30 ledgers under the modelled 30-ledger update delay.",
+      "title": "Seed-mode rotation is an identity change"
+    },
+    {
+      "headline": "conflicting validations flagged 100/100; duplicate validations counted 0 (never double-counted)",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S4",
+      "severity": "MEDIUM",
+      "severity_reason": "The double-sign is detected on every peer, but the hazard is real: a copied token lets one identity sign two ledgers for the same sequence, and detection is the only thing standing between that and a double count.",
+      "title": "Duplicated token: same key signs divergent ledgers"
+    },
+    {
+      "headline": "ML-DSA-65 manifest key material 10522 bytes vs ed25519 194 bytes (54.2x); validation 5261 vs 97 bytes (54.2x); pinned code rejects the 1952-byte key on 10/10 peers",
+      "ledgers_run": 5,
+      "peers": 10,
+      "scenario": "S9",
+      "severity": "MEDIUM",
+      "severity_reason": "A post-quantum signing key cannot be expressed at all in the pinned code \u2014 the key-type allowlist and the 33-byte public-key buffer reject it \u2014 and if it could, every manifest would carry roughly fifty times the key material. The exposure is architectural, not a control failure.",
+      "title": "Post-quantum size model and the key-type gap"
+    },
+    {
+      "headline": "attacker validations accepted after rotation 0/590; operator missed 1 ledger (handover); uptime 99.17%",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S2",
+      "severity": "LOW",
+      "severity_reason": "The attack is contained: the attacker keeps signing with the compromised key for 59 ledgers and none of those validations count; the operator loses one ledger to the emergency handover.",
+      "title": "Emergency rotation after suspected ephemeral-key compromise"
+    },
+    {
+      "headline": "validations accepted after revocation 0/600; post-revocation manifest attempts rejected stale 10/10; revocation terminal",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S3",
+      "severity": "LOW",
+      "severity_reason": "The attack is contained: revocation removes the validator entirely, post-revocation validations count zero, and no further manifest for the master can ever be accepted.",
+      "title": "Master-key compromise: revocation and terminal sequence"
+    },
+    {
+      "headline": "missed 10/120 ledgers during the failed rotation; rollback reinstating the old key accepted on 10/10 peers; validations resumed",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S5",
+      "severity": "LOW",
+      "severity_reason": "Recovery works and is bounded: the failed rotation costs ten ledgers, and the rollback \u2014 a new manifest with a higher sequence reinstating the old key \u2014 is accepted everywhere and issuance resumes.",
+      "title": "Rollback after a failed rotation"
+    },
+    {
+      "headline": "replayed manifest stale 10/10; forged master signature invalid 10/10; forged ephemeral signature invalid 10/10; 360 s old validation stale 10/10; tampered validation signature invalid 10/10",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S6",
+      "severity": "LOW",
+      "severity_reason": "Every replay and forgery is rejected on every peer: stale manifests, forged signatures, old validations and tampered signatures all fail a control.",
+      "title": "Replay and forgery resistance"
+    },
+    {
+      "headline": "key-reuse/version/domain attacks rejected 10/10 each; config rules 3/3 as coded; untrusted flood held at 1000/1000 untrusted entries (5 oldest evicted)",
+      "ledgers_run": 60,
+      "peers": 10,
+      "scenario": "S7",
+      "severity": "LOW",
+      "severity_reason": "Every malformed manifest is rejected on every peer and the untrusted cache holds its bound; the abuse surface is the config and key-handling rules, all of which hold.",
+      "title": "Key-reuse bans, malformed manifests, config rules, cache flood"
+    },
+    {
+      "headline": "120/120 validations accepted, 0 missed, uptime 100.00%",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S0",
+      "severity": "INFO",
+      "severity_reason": "No attack in this scenario; reference measurement of steady-state issuance under the current manifest.",
+      "title": "Baseline steady-state validation issuance"
+    },
+    {
+      "headline": "0 missed ledgers; rotation propagated to 10/10 peers in 2000 ms (4 gossip rounds); old-key validations rejected after rotation",
+      "ledgers_run": 120,
+      "peers": 10,
+      "scenario": "S1",
+      "severity": "INFO",
+      "severity_reason": "Reference measurement of a correct rotation: zero missed ledgers, full propagation inside one ledger close.",
+      "title": "Scheduled rotation with a pre-staged new key"
+    }
+  ]
+}
