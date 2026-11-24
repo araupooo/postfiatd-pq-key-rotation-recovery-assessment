@@ -1,0 +1,76 @@
+{
+  "controls": {
+    "C10": {
+      "attempts": 300,
+      "notes": [
+        "validations from an unlisted identity never counted toward consensus"
+      ],
+      "stopped": 300
+    },
+    "C17": {
+      "attempts": 300,
+      "notes": [
+        "seed-mode rotation produced a new unlisted identity; every validation until the UNL update was untrusted"
+      ],
+      "stopped": 300
+    }
+  },
+  "final_state": {
+    "V1": {
+      "mode": "seed",
+      "node_id": "node-f8d8636ad0b0",
+      "revoked": false,
+      "sequence": 0,
+      "signing_key": "seed-V1-rotated",
+      "up": true
+    }
+  },
+  "ledgers_missed": 0,
+  "ledgers_run": 120,
+  "metrics": {
+    "seed_rotate_V1": {
+      "ledger": 60,
+      "new_key": "seed-V1-rotated",
+      "new_node_id": "node-f8d8636ad0b0",
+      "old_node_id": "node-82c7c2c0da48"
+    },
+    "unl_update_V1": {
+      "ledger": 90,
+      "node_id": "node-f8d8636ad0b0"
+    },
+    "validation_totals": {
+      "accepted": 900,
+      "untrusted": 300
+    },
+    "validators": {
+      "V1": {
+        "master_key": "seed-V1",
+        "mode": "seed",
+        "sequence": 0,
+        "signing_key": "seed-V1"
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 900,
+    "badSeq": 0,
+    "conflicting": 0,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 0,
+    "untrusted": 300
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S8",
+  "seed": 20261125,
+  "severity": "HIGH",
+  "severity_reason": "Rotation without a manifest is an identity change, not a rotation: the new key is a new unlisted validator, and every validation it issues is untrusted until the operator updates the UNL on every peer \u2014 30 ledgers under the modelled 30-ledger update delay.",
+  "title": "Seed-mode rotation is an identity change",
+  "validation_totals": {
+    "accepted": 900,
+    "untrusted": 300
+  },
+  "validations_issued_peer_events": 1200
+}

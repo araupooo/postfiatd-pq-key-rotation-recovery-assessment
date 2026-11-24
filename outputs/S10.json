@@ -1,0 +1,65 @@
+{
+  "controls": {},
+  "final_state": {
+    "V1": {
+      "mode": "manifest",
+      "node_id": "node-ca5c0d5bd912",
+      "revoked": false,
+      "sequence": 2,
+      "signing_key": "eph-V1-s2",
+      "up": true
+    }
+  },
+  "ledgers_missed": 0,
+  "ledgers_run": 120,
+  "metrics": {
+    "partition": {
+      "end_ledger": 71,
+      "heal_sync_ms": 1500,
+      "reachable": 5,
+      "start_ledger": 61,
+      "total": 10
+    },
+    "rotation_V1": {
+      "gossip_ms": 1500,
+      "gossip_rounds": 3,
+      "ledger": 60,
+      "new_key": "eph-V1-s2",
+      "peers_informed": 5,
+      "peers_total": 5,
+      "sequence": 2
+    },
+    "validation_totals": {
+      "accepted": 1150
+    },
+    "validators": {
+      "V1": {
+        "master_key": "master-V1",
+        "mode": "manifest",
+        "sequence": 1,
+        "signing_key": "eph-V1-s1"
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 1150,
+    "badSeq": 0,
+    "conflicting": 0,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 0,
+    "untrusted": 0
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S10",
+  "seed": 20261125,
+  "severity": "HIGH",
+  "severity_reason": "The rotation succeeds but the validator contributes nothing during the partition: half the network never sees the new manifest, so the new key's validations are untrusted there and the 80% quorum is not met for ten ledgers. Bounded and self-healing, but a real availability loss.",
+  "title": "Rotation during a network partition",
+  "validation_totals": {
+    "accepted": 1150
+  },
+  "validations_issued_peer_events": 1150
+}

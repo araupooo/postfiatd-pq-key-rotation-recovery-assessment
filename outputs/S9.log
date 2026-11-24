@@ -1,0 +1,20 @@
+scenario: S9 Post-quantum size model and the key-type gap
+pinned commit: 0085a1ff885d6a446369cf73a4430f75af22be55
+seed: 20261125
+scenario file sha256: 3de70585b10de2b9fb104efb034ca1d0553f9901d2afd43ab36d29870b5e5f3b
+simulator.py sha256: bd881fa5f6d509356df6ad4f914b52cbdd87aee05c9e960c0c6fb96b49117bf5
+load_harness.py sha256: f78a84516609e3a6215b02cfb404cedceaf5ca4a73be5b7cec3283485d45bcb4
+ledgers run: 5
+--- events ---
+[4000 ms ledger 1] V1 validation_issued: ledger 1 signed with eph-V1-s1; peer outcomes accepted=10 => accepted=10/10
+[8000 ms ledger 2] V1 validation_issued: ledger 2 signed with eph-V1-s1; peer outcomes accepted=10 => accepted=10/10
+[12000 ms ledger 3] V1 validation_issued: ledger 3 signed with eph-V1-s1; peer outcomes accepted=10 => accepted=10/10
+[16000 ms ledger 4] V1 validation_issued: ledger 4 signed with eph-V1-s1; peer outcomes accepted=10 => accepted=10/10
+[20000 ms ledger 5] V1 validation_issued: ledger 5 signed with eph-V1-s1; peer outcomes accepted=10 => accepted=10/10
+[20000 ms ledger 5] model pq_size_model: ML-DSA-65 manifest key material 10522 bytes vs ed25519 194 bytes (54.2x); validation 5261 vs 97 bytes (54.2x); pinned deserialize rejects the 1952-byte key on 10/10 peers => invalid=10/10
+--- summary ---
+validation totals (peer events): {"accepted": 50}
+peer counters: {"accepted": 50, "badSeq": 0, "conflicting": 0, "invalid_sig": 0, "multiple": 0, "stale": 0, "superseded_key": 0, "untrusted": 0}
+ledgers missed: 0
+controls: {"C11": {"attempts": 10, "notes": ["1952-byte ML-DSA-65 key fails the 33-byte publicKeyType check"], "stopped": 10}, "C12": {"attempts": 10, "notes": ["mldsa65 is not a member of the pinned KeyType enum"], "stopped": 10}}
+final state: {"V1": {"mode": "manifest", "node_id": "node-ca5c0d5bd912", "revoked": false, "sequence": 1, "signing_key": "eph-V1-s1", "up": true}}

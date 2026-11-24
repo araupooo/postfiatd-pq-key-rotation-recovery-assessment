@@ -1,0 +1,99 @@
+{
+  "controls": {
+    "C11": {
+      "attempts": 10,
+      "notes": [
+        "1952-byte ML-DSA-65 key fails the 33-byte publicKeyType check"
+      ],
+      "stopped": 10
+    },
+    "C12": {
+      "attempts": 10,
+      "notes": [
+        "mldsa65 is not a member of the pinned KeyType enum"
+      ],
+      "stopped": 10
+    }
+  },
+  "final_state": {
+    "V1": {
+      "mode": "manifest",
+      "node_id": "node-ca5c0d5bd912",
+      "revoked": false,
+      "sequence": 1,
+      "signing_key": "eph-V1-s1",
+      "up": true
+    }
+  },
+  "ledgers_missed": 0,
+  "ledgers_run": 5,
+  "metrics": {
+    "pq_size_model": {
+      "manifest_gossip_bytes_per_rotation_10_peers": {
+        "ed25519": 1940,
+        "mldsa65": 105220
+      },
+      "manifest_ratio_mldsa65_vs_ed25519": 54.24,
+      "pinned_deserialize_of_mldsa65_manifest": {
+        "invalid": 10
+      },
+      "table": {
+        "ed25519": {
+          "manifest_key_material_bytes": 194,
+          "pubkey_bytes": 33,
+          "signature_bytes": 64,
+          "validation_key_material_bytes": 97
+        },
+        "mldsa65": {
+          "manifest_key_material_bytes": 10522,
+          "pubkey_bytes": 1952,
+          "signature_bytes": 3309,
+          "validation_key_material_bytes": 5261
+        },
+        "secp256k1": {
+          "manifest_key_material_bytes": 210,
+          "pubkey_bytes": 33,
+          "signature_bytes": 72,
+          "validation_key_material_bytes": 105
+        }
+      },
+      "validation_bytes_per_ledger_10_validators_10_peers": {
+        "ed25519": 9700,
+        "mldsa65": 526100
+      },
+      "validation_ratio_mldsa65_vs_ed25519": 54.24
+    },
+    "validation_totals": {
+      "accepted": 50
+    },
+    "validators": {
+      "V1": {
+        "master_key": "master-V1",
+        "mode": "manifest",
+        "sequence": 1,
+        "signing_key": "eph-V1-s1"
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 50,
+    "badSeq": 0,
+    "conflicting": 0,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 0,
+    "untrusted": 0
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S9",
+  "seed": 20261125,
+  "severity": "MEDIUM",
+  "severity_reason": "A post-quantum signing key cannot be expressed at all in the pinned code \u2014 the key-type allowlist and the 33-byte public-key buffer reject it \u2014 and if it could, every manifest would carry roughly fifty times the key material. The exposure is architectural, not a control failure.",
+  "title": "Post-quantum size model and the key-type gap",
+  "validation_totals": {
+    "accepted": 50
+  },
+  "validations_issued_peer_events": 50
+}

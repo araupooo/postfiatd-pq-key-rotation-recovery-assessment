@@ -1,0 +1,7 @@
+time_ms,ledger,actor,event,detail,outcome
+4000,1,V1,validation_issued,ledger 1 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+8000,2,V1,validation_issued,ledger 2 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+12000,3,V1,validation_issued,ledger 3 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+16000,4,V1,validation_issued,ledger 4 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+20000,5,V1,validation_issued,ledger 5 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+20000,5,model,pq_size_model,ML-DSA-65 manifest key material 10522 bytes vs ed25519 194 bytes (54.2x); validation 5261 vs 97 bytes (54.2x); pinned deserialize rejects the 1952-byte key on 10/10 peers,invalid=10/10
