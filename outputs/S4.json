@@ -1,0 +1,72 @@
+{
+  "controls": {
+    "C07": {
+      "attempts": 100,
+      "notes": [
+        "second validation for a sequence never counted"
+      ],
+      "stopped": 100
+    },
+    "C08": {
+      "attempts": 100,
+      "notes": [
+        "same-sequence divergent-ledger validations flagged"
+      ],
+      "stopped": 100
+    }
+  },
+  "final_state": {
+    "V1": {
+      "mode": "manifest",
+      "node_id": "node-ca5c0d5bd912",
+      "revoked": false,
+      "sequence": 1,
+      "signing_key": "eph-V1-s1",
+      "up": true
+    }
+  },
+  "ledgers_missed": 0,
+  "ledgers_run": 120,
+  "metrics": {
+    "duplicate_sign_V1": {
+      "accepted_duplicate": 0,
+      "attempts": 100,
+      "conflicting": 100,
+      "ledgers": 10
+    },
+    "validation_totals": {
+      "accepted": 1200,
+      "conflicting": 100
+    },
+    "validators": {
+      "V1": {
+        "master_key": "master-V1",
+        "mode": "manifest",
+        "sequence": 1,
+        "signing_key": "eph-V1-s1"
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 1200,
+    "badSeq": 0,
+    "conflicting": 100,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 0,
+    "untrusted": 0
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S4",
+  "seed": 20261125,
+  "severity": "MEDIUM",
+  "severity_reason": "The double-sign is detected on every peer, but the hazard is real: a copied token lets one identity sign two ledgers for the same sequence, and detection is the only thing standing between that and a double count.",
+  "title": "Duplicated token: same key signs divergent ledgers",
+  "validation_totals": {
+    "accepted": 1200,
+    "conflicting": 100
+  },
+  "validations_issued_peer_events": 1300
+}

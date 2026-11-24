@@ -1,0 +1,89 @@
+{
+  "controls": {
+    "C03": {
+      "attempts": 10,
+      "notes": [
+        "no manifest accepted after revocation; revocation is terminal"
+      ],
+      "stopped": 10
+    },
+    "C16": {
+      "attempts": 600,
+      "notes": [
+        "superseded-key validations never counted"
+      ],
+      "stopped": 600
+    }
+  },
+  "final_state": {
+    "V1": {
+      "mode": "manifest",
+      "node_id": "node-ca5c0d5bd912",
+      "revoked": true,
+      "sequence": 4294967295,
+      "signing_key": "eph-V1-s1",
+      "up": false
+    }
+  },
+  "ledgers_missed": 60,
+  "ledgers_run": 120,
+  "metrics": {
+    "attacker_old_key_V1": {
+      "accepted": 0,
+      "attempts": 600,
+      "ledgers": 60,
+      "superseded_key": 600
+    },
+    "post_revocation_manifest": {
+      "attempts": 10,
+      "dispositions": {
+        "stale": 10
+      },
+      "sequence": 4294967294
+    },
+    "revocation_V1": {
+      "gossip_ms": 2000,
+      "gossip_rounds": 4,
+      "ledger": 60,
+      "peers_informed": 10,
+      "peers_total": 10,
+      "sequence": 4294967295
+    },
+    "validation_totals": {
+      "accepted": 600,
+      "missed": 60,
+      "superseded_key": 600
+    },
+    "validators": {
+      "V1": {
+        "master_key": "master-V1",
+        "mode": "manifest",
+        "sequence": 1,
+        "signing_key": "eph-V1-s1"
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 600,
+    "badSeq": 0,
+    "conflicting": 0,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 600,
+    "untrusted": 0
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S3",
+  "seed": 20261125,
+  "severity": "LOW",
+  "severity_reason": "The attack is contained: revocation removes the validator entirely, post-revocation validations count zero, and no further manifest for the master can ever be accepted.",
+  "title": "Master-key compromise: revocation and terminal sequence",
+  "validation_totals": {
+    "accepted": 600,
+    "missed": 60,
+    "superseded_key": 600
+  },
+  "validations_issued_peer_events": 1200
+}
