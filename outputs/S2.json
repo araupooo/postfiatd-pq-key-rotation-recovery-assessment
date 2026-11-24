@@ -1,0 +1,76 @@
+{
+  "controls": {
+    "C16": {
+      "attempts": 590,
+      "notes": [
+        "superseded-key validations never counted"
+      ],
+      "stopped": 590
+    }
+  },
+  "final_state": {
+    "V1": {
+      "mode": "manifest",
+      "node_id": "node-ca5c0d5bd912",
+      "revoked": false,
+      "sequence": 2,
+      "signing_key": "eph-V1-s2",
+      "up": true
+    }
+  },
+  "ledgers_missed": 1,
+  "ledgers_run": 120,
+  "metrics": {
+    "attacker_old_key_V1": {
+      "accepted": 0,
+      "attempts": 590,
+      "ledgers": 59,
+      "superseded_key": 590
+    },
+    "rotation_V1": {
+      "gossip_ms": 2000,
+      "gossip_rounds": 4,
+      "ledger": 60,
+      "new_key": "eph-V1-s2",
+      "peers_informed": 10,
+      "peers_total": 10,
+      "sequence": 2
+    },
+    "validation_totals": {
+      "accepted": 1190,
+      "missed": 1,
+      "superseded_key": 590
+    },
+    "validators": {
+      "V1": {
+        "master_key": "master-V1",
+        "mode": "manifest",
+        "sequence": 1,
+        "signing_key": "eph-V1-s1"
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 1190,
+    "badSeq": 0,
+    "conflicting": 0,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 590,
+    "untrusted": 0
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S2",
+  "seed": 20261125,
+  "severity": "LOW",
+  "severity_reason": "The attack is contained: the attacker keeps signing with the compromised key for 59 ledgers and none of those validations count; the operator loses one ledger to the emergency handover.",
+  "title": "Emergency rotation after suspected ephemeral-key compromise",
+  "validation_totals": {
+    "accepted": 1190,
+    "missed": 1,
+    "superseded_key": 590
+  },
+  "validations_issued_peer_events": 1780
+}

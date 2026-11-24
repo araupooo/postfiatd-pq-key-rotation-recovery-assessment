@@ -1,0 +1,49 @@
+{
+  "controls": {},
+  "final_state": {
+    "V1": {
+      "mode": "manifest",
+      "node_id": "node-ca5c0d5bd912",
+      "revoked": false,
+      "sequence": 1,
+      "signing_key": "eph-V1-s1",
+      "up": true
+    }
+  },
+  "ledgers_missed": 0,
+  "ledgers_run": 120,
+  "metrics": {
+    "validation_totals": {
+      "accepted": 1200
+    },
+    "validators": {
+      "V1": {
+        "master_key": "master-V1",
+        "mode": "manifest",
+        "sequence": 1,
+        "signing_key": "eph-V1-s1"
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 1200,
+    "badSeq": 0,
+    "conflicting": 0,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 0,
+    "untrusted": 0
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S0",
+  "seed": 20261125,
+  "severity": "INFO",
+  "severity_reason": "No attack in this scenario; reference measurement of steady-state issuance under the current manifest.",
+  "title": "Baseline steady-state validation issuance",
+  "validation_totals": {
+    "accepted": 1200
+  },
+  "validations_issued_peer_events": 1200
+}
