@@ -1,0 +1,69 @@
+{
+  "controls": {},
+  "final_state": {
+    "V1": {
+      "mode": "manifest",
+      "node_id": "node-ca5c0d5bd912",
+      "revoked": false,
+      "sequence": 3,
+      "signing_key": "eph-V1-s1",
+      "up": true
+    }
+  },
+  "ledgers_missed": 10,
+  "ledgers_run": 120,
+  "metrics": {
+    "rollback_V1": {
+      "gossip_ms": 2000,
+      "gossip_rounds": 4,
+      "ledger": 70,
+      "peers_informed": 10,
+      "peers_total": 10,
+      "reinstated_key": "eph-V1-s1",
+      "sequence": 3
+    },
+    "rotation_V1": {
+      "gossip_ms": 2000,
+      "gossip_rounds": 4,
+      "ledger": 60,
+      "new_key": "eph-V1-s2",
+      "peers_informed": 10,
+      "peers_total": 10,
+      "sequence": 2
+    },
+    "validation_totals": {
+      "accepted": 1100,
+      "missed": 10
+    },
+    "validators": {
+      "V1": {
+        "master_key": "master-V1",
+        "mode": "manifest",
+        "sequence": 1,
+        "signing_key": "eph-V1-s1"
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 1100,
+    "badSeq": 0,
+    "conflicting": 0,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 0,
+    "untrusted": 0
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S5",
+  "seed": 20261125,
+  "severity": "LOW",
+  "severity_reason": "Recovery works and is bounded: the failed rotation costs ten ledgers, and the rollback \u2014 a new manifest with a higher sequence reinstating the old key \u2014 is accepted everywhere and issuance resumes.",
+  "title": "Rollback after a failed rotation",
+  "validation_totals": {
+    "accepted": 1100,
+    "missed": 10
+  },
+  "validations_issued_peer_events": 1100
+}

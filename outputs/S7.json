@@ -1,0 +1,148 @@
+{
+  "controls": {
+    "C04": {
+      "attempts": 30,
+      "notes": [
+        "key-reuse manifest rejected (ephemeral_reuse)",
+        "key-reuse manifest rejected (signing_is_master)",
+        "key-reuse manifest rejected (master_is_ephemeral)"
+      ],
+      "stopped": 30
+    },
+    "C05": {
+      "attempts": 3,
+      "notes": [
+        "config rules enforced as coded"
+      ],
+      "stopped": 3
+    },
+    "C06": {
+      "attempts": 1005,
+      "notes": [
+        "cache held at the 1000-entry bound; oldest evicted"
+      ],
+      "stopped": 1005
+    },
+    "C13": {
+      "attempts": 10,
+      "notes": [
+        "version 1 manifest rejected at deserialize"
+      ],
+      "stopped": 10
+    },
+    "C14": {
+      "attempts": 10,
+      "notes": [
+        "malformed-domain manifest rejected at deserialize"
+      ],
+      "stopped": 10
+    }
+  },
+  "final_state": {
+    "V1": {
+      "mode": "manifest",
+      "node_id": "node-ca5c0d5bd912",
+      "revoked": false,
+      "sequence": 1,
+      "signing_key": "eph-V1-s1",
+      "up": true
+    }
+  },
+  "ledgers_missed": 0,
+  "ledgers_run": 60,
+  "metrics": {
+    "config_check": {
+      "cases": 3,
+      "passed": 3,
+      "results": {
+        "both_token_and_seed": {
+          "expected": "configInvalid",
+          "match": true,
+          "outcome": "configInvalid",
+          "reason": "both token and seed specified"
+        },
+        "token_pk_mismatch": {
+          "expected": "configInvalid",
+          "match": true,
+          "outcome": "configInvalid",
+          "reason": "token public key != manifest signing key"
+        },
+        "valid_token": {
+          "expected": "valid",
+          "match": true,
+          "outcome": "valid",
+          "reason": "token accepted"
+        }
+      }
+    },
+    "domain_attack": {
+      "attempts": 10,
+      "dispositions": {
+        "invalid": 10
+      }
+    },
+    "key_reuse_ephemeral_reuse": {
+      "attempts": 10,
+      "dispositions": {
+        "badEphemeralKey": 10
+      }
+    },
+    "key_reuse_master_is_ephemeral": {
+      "attempts": 10,
+      "dispositions": {
+        "badMasterKey": 10
+      }
+    },
+    "key_reuse_signing_is_master": {
+      "attempts": 10,
+      "dispositions": {
+        "invalid": 10
+      }
+    },
+    "untrusted_flood": {
+      "bound": 1000,
+      "cache_size": 1001,
+      "evicted_oldest": 5,
+      "submitted": 1005,
+      "untrusted_count": 1000
+    },
+    "validation_totals": {
+      "accepted": 600
+    },
+    "validators": {
+      "V1": {
+        "master_key": "master-V1",
+        "mode": "manifest",
+        "sequence": 1,
+        "signing_key": "eph-V1-s1"
+      }
+    },
+    "version_attack": {
+      "attempts": 10,
+      "dispositions": {
+        "invalid": 10
+      }
+    }
+  },
+  "peer_counters": {
+    "accepted": 600,
+    "badSeq": 0,
+    "conflicting": 0,
+    "invalid_sig": 0,
+    "multiple": 0,
+    "stale": 0,
+    "superseded_key": 0,
+    "untrusted": 0
+  },
+  "peers": 10,
+  "pinned_commit": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scenario": "S7",
+  "seed": 20261125,
+  "severity": "LOW",
+  "severity_reason": "Every malformed manifest is rejected on every peer and the untrusted cache holds its bound; the abuse surface is the config and key-handling rules, all of which hold.",
+  "title": "Key-reuse bans, malformed manifests, config rules, cache flood",
+  "validation_totals": {
+    "accepted": 600
+  },
+  "validations_issued_peer_events": 600
+}

@@ -1,0 +1,70 @@
+time_ms,ledger,actor,event,detail,outcome
+4000,1,V1,validation_issued,ledger 1 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+8000,2,V1,validation_issued,ledger 2 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+12000,3,V1,validation_issued,ledger 3 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+16000,4,V1,validation_issued,ledger 4 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+20000,5,V1,validation_issued,ledger 5 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+24000,6,V1,validation_issued,ledger 6 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+28000,7,V1,validation_issued,ledger 7 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+32000,8,V1,validation_issued,ledger 8 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+36000,9,V1,validation_issued,ledger 9 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+40000,10,V1,validation_issued,ledger 10 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+44000,11,V1,validation_issued,ledger 11 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+48000,12,V1,validation_issued,ledger 12 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+52000,13,V1,validation_issued,ledger 13 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+56000,14,V1,validation_issued,ledger 14 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+60000,15,V1,validation_issued,ledger 15 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+64000,16,V1,validation_issued,ledger 16 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+68000,17,V1,validation_issued,ledger 17 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+72000,18,V1,validation_issued,ledger 18 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+76000,19,V1,validation_issued,ledger 19 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+80000,20,V1,validation_issued,ledger 20 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+84000,21,V1,validation_issued,ledger 21 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+88000,22,V1,validation_issued,ledger 22 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+92000,23,V1,validation_issued,ledger 23 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+96000,24,V1,validation_issued,ledger 24 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+100000,25,V1,validation_issued,ledger 25 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+104000,26,V1,validation_issued,ledger 26 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+108000,27,V1,validation_issued,ledger 27 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+112000,28,V1,validation_issued,ledger 28 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+116000,29,V1,validation_issued,ledger 29 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+120000,30,V1,validation_issued,ledger 30 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+120000,30,attacker,key_reuse,variant=ephemeral_reuse; peer dispositions badEphemeralKey=10,rejected=10/10
+120000,30,attacker,key_reuse,variant=signing_is_master; peer dispositions invalid=10,rejected=10/10
+120000,30,attacker,key_reuse,variant=master_is_ephemeral; peer dispositions badMasterKey=10,rejected=10/10
+120000,30,attacker,version_attack,manifest version 1; peer dispositions invalid=10,invalid=10/10
+120000,30,attacker,domain_attack,manifest domain 'bad..domain'; peer dispositions invalid=10,invalid=10/10
+120000,30,V1,config_check,config case both_token_and_seed: both token and seed specified,configInvalid
+120000,30,V1,config_check,config case token_pk_mismatch: token public key != manifest signing key,configInvalid
+120000,30,V1,config_check,config case valid_token: token accepted,valid
+120000,30,attacker,untrusted_flood,"1005 capped unlisted manifests; untrusted set 1000 (bound 1000), flood entries kept 1000, oldest evicted 5",bound_held=True
+124000,31,V1,validation_issued,ledger 31 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+128000,32,V1,validation_issued,ledger 32 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+132000,33,V1,validation_issued,ledger 33 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+136000,34,V1,validation_issued,ledger 34 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+140000,35,V1,validation_issued,ledger 35 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+144000,36,V1,validation_issued,ledger 36 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+148000,37,V1,validation_issued,ledger 37 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+152000,38,V1,validation_issued,ledger 38 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+156000,39,V1,validation_issued,ledger 39 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+160000,40,V1,validation_issued,ledger 40 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+164000,41,V1,validation_issued,ledger 41 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+168000,42,V1,validation_issued,ledger 42 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+172000,43,V1,validation_issued,ledger 43 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+176000,44,V1,validation_issued,ledger 44 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+180000,45,V1,validation_issued,ledger 45 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+184000,46,V1,validation_issued,ledger 46 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+188000,47,V1,validation_issued,ledger 47 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+192000,48,V1,validation_issued,ledger 48 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+196000,49,V1,validation_issued,ledger 49 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+200000,50,V1,validation_issued,ledger 50 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+204000,51,V1,validation_issued,ledger 51 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+208000,52,V1,validation_issued,ledger 52 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+212000,53,V1,validation_issued,ledger 53 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+216000,54,V1,validation_issued,ledger 54 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+220000,55,V1,validation_issued,ledger 55 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+224000,56,V1,validation_issued,ledger 56 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+228000,57,V1,validation_issued,ledger 57 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+232000,58,V1,validation_issued,ledger 58 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+236000,59,V1,validation_issued,ledger 59 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
+240000,60,V1,validation_issued,ledger 60 signed with eph-V1-s1; peer outcomes accepted=10,accepted=10/10
